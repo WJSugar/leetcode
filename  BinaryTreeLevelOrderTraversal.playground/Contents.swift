@@ -1,7 +1,25 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
-
+/*
+ 给定一个二叉树，返回其按层次遍历的节点值。 （即逐层地，从左到右访问所有节点）。
+ 
+ 例如:
+ 给定二叉树: [3,9,20,null,null,15,7],
+ 
+ 3
+ / \
+ 9  20
+ /  \
+ 15   7
+ 返回其层次遍历结果：
+ 
+ [
+ [3],
+ [9,20],
+ [15,7]
+ ]
+ */
 public class TreeNode {
     public var val: Int
     public var left: TreeNode?
@@ -14,6 +32,34 @@ public class TreeNode {
 }
 
 func levelOrder(_ root: TreeNode?) -> [[Int]] {
+    guard let temp = root else {
+        return []
+    }
+    var result = Array<Array<Int>>()
+    recursive(temp, 0, &result)
+    return result
+}
+func recursive(_ node: TreeNode?, _ level: Int, _ result: inout Array<Array<Int>>) {
+    guard let temp = node else {
+        return
+    }
+    if result.count - 1 < level {
+        let curLevels = Array<Int>()
+        result.append(curLevels)
+    }
+    result[level].append(temp.val)
+    
+    if temp.left != nil {
+        recursive(temp.left!, level + 1, &result)
+    }
+    
+    if temp.right != nil {
+        recursive(temp.right, level + 1, &result)
+    }
+}
+
+
+func levelOrder1(_ root: TreeNode?) -> [[Int]] {
     if root == nil {
         return []
     }
