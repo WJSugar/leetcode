@@ -31,6 +31,7 @@ public class TreeNode {
     }
 }
 
+//my solution
 func levelOrder(_ root: TreeNode?) -> [[Int]] {
     guard let temp = root else {
         return []
@@ -57,7 +58,6 @@ func recursive(_ node: TreeNode?, _ level: Int, _ result: inout Array<Array<Int>
         recursive(temp.right, level + 1, &result)
     }
 }
-
 
 func levelOrder1(_ root: TreeNode?) -> [[Int]] {
     if root == nil {
