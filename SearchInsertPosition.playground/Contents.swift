@@ -20,10 +20,10 @@ func searchInsert(_ nums: [Int], _ target: Int) -> Int {
     }
     
     var low = 0;
-    var height = nums.count - 1
-    var mid = (low + height) / 2
+    var high = nums.count - 1
+    var mid = (low + high) / 2
     
-    while low <= height {
+    while low <= high {
         let vaule = nums[mid]
         let after = nums[mid + 1]
         if mid - 1 < 0 {
@@ -51,7 +51,7 @@ func searchInsert(_ nums: [Int], _ target: Int) -> Int {
             } else if before == target {
                 return mid - 1
             } else {
-                height = mid - 1
+                high = mid - 1
             }
         }
         
@@ -64,7 +64,7 @@ func searchInsert(_ nums: [Int], _ target: Int) -> Int {
                 low = mid + 1
             }
         }
-        mid = (low + height) / 2
+        mid = (low + high) / 2
     }
     return 0;
 }
