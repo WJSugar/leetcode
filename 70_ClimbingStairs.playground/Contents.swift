@@ -45,7 +45,7 @@ func climbStairs(_ n: Int) -> Int {
 }
 
 // better solution
-func climbStairs(_ n: Int) -> Int {
+func climbStairs_better(_ n: Int) -> Int {
     if n < 3 {
         return n
     }
@@ -61,6 +61,20 @@ func climbStairs(_ n: Int) -> Int {
     }
     
     return res
+}
+
+//recurive method
+func climbStairs_rec(_ n: Int) -> Int {
+    var total = 0
+    total = rec_climbStairs(n)
+    return total;
+}
+
+func rec_climbStairs(_ n: Int) -> Int{
+    if n == 1 || n == 2 {
+        return n
+    }
+    return rec_climbStairs(n - 1) + rec_climbStairs(n - 2)
 }
 
 
