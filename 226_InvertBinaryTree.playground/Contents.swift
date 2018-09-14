@@ -67,7 +67,6 @@ func invertTree_better(_ root: TreeNode?) -> TreeNode? {
     var temp: TreeNode?
     
     
-    
     if root?.left?.left != nil || root?.left?.right != nil {
         temp = invertTree(root?.left)
     }else {
