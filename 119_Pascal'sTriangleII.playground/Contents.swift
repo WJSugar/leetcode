@@ -1,5 +1,3 @@
-//: Playground - noun: a place where people can play
-
 import UIKit
 
 /*
@@ -43,7 +41,7 @@ func getRow_rec(_ rowIndex: Int) -> [Int] {
     if rowIndex == 0 {
         return [1]
     }
-
+    
     if rowIndex == 1 {
         return [1, 1]
     }
