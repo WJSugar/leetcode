@@ -19,7 +19,7 @@ func threeSum(_ nums: [Int]) -> [[Int]] {
     if nums.count < 3 {
         return []
     }
-    var nums = nums.sorted()
+    let nums = nums.sorted()
     var result = [[Int]]();
     var allZero = true;
     for i in nums {
